@@ -41,7 +41,7 @@ class Piggy(PiggyParent):
                 "f": ("Follow", self.follow),
                 "c": ("Calibrate", self.calibrate),
                 "q": ("Quit", self.quit),
-                "l": ("Luke", self.)
+                "l": ("luke", self.luke)
                 }
         # loop and print the menu...
         for key in sorted(menu.keys()):
@@ -57,7 +57,7 @@ class Piggy(PiggyParent):
     ****************
     '''
 
-    def Luke(self):
+    def luke(self):
       print("This is for testing")
 
     def dance(self):
