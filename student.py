@@ -61,7 +61,7 @@ class Piggy(PiggyParent):
       print("This is for testing")
       print("cheese curds")
       self.fwd()
-      time.sleep()
+      time.sleep(2)
       self.stop()
 
       self.right()
