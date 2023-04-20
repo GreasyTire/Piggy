@@ -60,6 +60,13 @@ class Piggy(PiggyParent):
     def luke(self):
       print("This is for testing")
       print("cheese curds")
+      self.fwd()
+      time.sleep()
+      self.stop()
+
+      self.right()
+      time.sleep(2)
+      self.stop()
 
     def dance(self):
         """A higher-ordered algorithm to make your robot dance"""
