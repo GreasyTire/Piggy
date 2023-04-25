@@ -41,7 +41,8 @@ class Piggy(PiggyParent):
                 "f": ("Follow", self.follow),
                 "c": ("Calibrate", self.calibrate),
                 "q": ("Quit", self.quit),
-                "l": ("luke", self.luke)
+                "l": ("luke", self.luke),
+                "sq": ("square", self.square),
                 }
         # loop and print the menu...
         for key in sorted(menu.keys()):
