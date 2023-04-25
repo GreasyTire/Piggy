@@ -60,12 +60,22 @@ class Piggy(PiggyParent):
     def luke(self):
       print("This is for testing")
       print("cheese curds")
-      self.fwd()
-      time.sleep(2)
+      self.fwd(2)
+      time.sleep()
       self.stop()
 
-      self.right()
-      time.sleep(2)
+      self.right(1)
+      time.sleep()
+      self.stop()
+
+    def square(self):
+      for x in range(4)
+      self.fwd(2)
+      time.sleep()
+      self.stop()
+      
+      self.left(1)
+      time.sleep()
       self.stop()
 
     def dance(self):
