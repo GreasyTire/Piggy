@@ -59,15 +59,7 @@ class Piggy(PiggyParent):
     '''
 
     def luke(self):
-      print("This is for testing")
-      print("cheese curds")
-      self.fwd()
-      time.sleep(2)
-      self.stop()
-
-      self.right()
-      time.sleep(1)
-      self.stop()
+     self.safe_to_dance()
 
     def square(self):
       for x in range(4):
