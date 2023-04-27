@@ -98,7 +98,7 @@ class Piggy(PiggyParent):
         """ Does a 360 distance check and returns true if safe """
         self.right()
         for x in range(8):
-          self.turn_by_deg(45)
+          self.turn_by_deg(40)
           if self.read_distance() < 300:
             break
           
