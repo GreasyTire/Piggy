@@ -99,7 +99,7 @@ class Piggy(PiggyParent):
         self.right()
         for x in range(8):
           self.turn_by_deg(45)
-          if self.read_distance() < 500:
+          if self.read_distance() < 300:
             break
           
       
