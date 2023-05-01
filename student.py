@@ -74,8 +74,8 @@ class Piggy(PiggyParent):
     def dance(self):
         """A higher-ordered algorithm to make your robot dance"""
         # TODO: check to see if it's safe before dancing
-        self.safe_to_dance()
-        if True:
+        
+        if self.safe_to_dance():
             # lower-ordered example...
           for x in range(3):
             self.right()
@@ -94,11 +94,11 @@ class Piggy(PiggyParent):
             self.back()
             time.sleep(.7)
             self.stop()
-        elif False:
+        else:
           print("not safe")
     def safe_to_dance(self):
         """ Does a 360 distance check and returns true if safe """
-        self.right()
+        
         for x in range(8):
           self.turn_by_deg(40)
           if self.read_distance() < 300:
@@ -107,7 +107,7 @@ class Piggy(PiggyParent):
         return True
           
       
-        self.stop()
+        
 
     def shake(self):
         """ Another example move """
