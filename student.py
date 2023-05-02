@@ -110,6 +110,7 @@ class Piggy(PiggyParent):
       
 
     def wall(self):
+      self.read_distance()
       self.fwd() == True
       if self.read_distance() < 50:
         self.fwd() == False 
