@@ -110,8 +110,10 @@ class Piggy(PiggyParent):
       
 
     def wall(self):
-      self.fwd()
+      self.fwd() == True
       if self.read_distance() < 50:
+        self.fwd() == False
+      if self.fwd() == False:
         self.stop()
         
     def shake(self):
