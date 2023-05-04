@@ -155,7 +155,7 @@ class PiggyParent(gopigo3.GoPiGo3):
     def servo(self, angle):
         """Moves the servo to the given angle"""
         print("Servo moving to: {} ".format(angle))
-        self.set_servo(self.SERVO_2, angle)
+        self.set_servo(self.SERVO_1, angle)
         time.sleep(.05)
 
     def stop(self):
