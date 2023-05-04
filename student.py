@@ -63,7 +63,15 @@ class Piggy(PiggyParent):
     '''
 
     def luke(self):
-     self.safe_to_dance()
+      #self.safe_to_dance()
+      while True:
+        self.servo(2000)
+        time.sleep(1)
+        self.servo(1500)
+        time.sleep(1)
+        self.servo(1000)
+        time.sleep(1)
+        
 
     def square(self):
       for x in range(4):
