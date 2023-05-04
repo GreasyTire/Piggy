@@ -45,6 +45,7 @@ class Piggy(PiggyParent):
                 "sq": ("square", self.square),
                 "w": ("wall", self.wall),
                 "t": ("turn", self.turn),
+                "b": ("box", self.box),
                 }
         # loop and print the menu...
         for key in sorted(menu.keys()):
@@ -124,7 +125,19 @@ class Piggy(PiggyParent):
           self.turn() 
         else:
           self.fwd()
-      
+
+    def box(self):
+      while True:
+        if self.read_distance() < 80:
+          self.turn_by_deg(90)
+          self.servo(-90)
+          if self.read_distance() <100:
+            self.turn_by_deg(-90)
+            self.servo(90)
+        else:
+          self.fwd()
+            
+          
         
     def shake(self):
         """ Another example move """
