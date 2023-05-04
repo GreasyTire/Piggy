@@ -127,15 +127,16 @@ class Piggy(PiggyParent):
           self.fwd()
 
     def box(self):
+      self.servo(self.MIDPOINT)
       while True:
         if self.read_distance() < 80:
           self.turn_by_deg(90)
           self.servo(2000)
-          time.sleep(.5)
+          time.sleep(1.5)
           if self.read_distance() <100:
             self.turn_by_deg(-90)
             self.servo(1000)
-            time.sleep(.5)
+            time.sleep(1.5)
         else:
           self.fwd()
             
