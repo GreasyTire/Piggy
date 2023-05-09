@@ -141,7 +141,7 @@ class Piggy(PiggyParent):
         if self.read_distance() < 80:
           self.turn_by_deg(90)
           self.servo(2700)
-          if self.read_distance() > 100:
+          if self.read_distance() > 200:
             self.turn_by_deg(-90)
             self.servo(self.MIDPOINT)
         else:
