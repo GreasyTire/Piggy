@@ -153,10 +153,36 @@ class Piggy(PiggyParent):
             
     def close(self):
       while True:
-        if self.read_distance() < 200:
+        if self.read_distance() < 100:
           self.stop()
-          self.scan()
-          print(self.scan_data)
+          for x in range(1):
+            turn_by_deg(45)
+            self.read_distance() = x
+          turn_by_deg(-45)
+          for x in range(1):
+            turn_by_deg(-45)
+            self.read_distance() = y
+          turn_by_deg(45)
+          if x > y:
+            self.turn_by_deg(-90)
+            self.servo(2400)
+            self.fwd()
+            if self.read_distanc() > 200:
+              self.fwd()
+              time.sleep(1)
+              turn_by_deg(90)
+              self.servo(MIDPOINT)
+              
+          else:
+            self.turn_by_deg(90)
+            self.servo(300)
+            self.fwd()
+            if self.read_distance() > 200:
+              self.fwd()
+              time.sleep(1)
+              turn_by_deg(-90)
+              self.servo(MIDPOINT)
+            
         else:
           self.fwd()
         
