@@ -155,14 +155,14 @@ class Piggy(PiggyParent):
       while True:
         if self.read_distance() < 100:
           self.stop()
-          for x in range(1):
-            turn_by_deg(45)
-            self.read_distance() == x
-          turn_by_deg(-45)
-          for x in range(1):
-            turn_by_deg(-45)
-            self.read_distance() == y
-          turn_by_deg(45)
+          
+          self.turn_by_deg(30)
+          x = self.read_distance()
+          self.turn_by_deg(-30)
+          
+          self.turn_by_deg(-30)
+          y = self.read_distance()
+          self.turn_by_deg(30)
           if x > y:
             self.turn_by_deg(-90)
             self.servo(2400)
@@ -170,8 +170,8 @@ class Piggy(PiggyParent):
             if self.read_distanc() > 200:
               self.fwd()
               time.sleep(1)
-              turn_by_deg(90)
-              self.servo(MIDPOINT)
+              self.turn_by_deg(90)
+              self.servo(self.MIDPOINT)
               
           else:
             self.turn_by_deg(90)
@@ -180,8 +180,8 @@ class Piggy(PiggyParent):
             if self.read_distance() > 200:
               self.fwd()
               time.sleep(1)
-              turn_by_deg(-90)
-              self.servo(MIDPOINT)
+              self.turn_by_deg(-90)
+              self.servo(self.MIDPOINT)
             
         else:
           self.fwd()
