@@ -157,11 +157,11 @@ class Piggy(PiggyParent):
           self.stop()
           for x in range(1):
             turn_by_deg(45)
-            self.read_distance() = x
+            self.read_distance() == x
           turn_by_deg(-45)
           for x in range(1):
             turn_by_deg(-45)
-            self.read_distance() = y
+            self.read_distance() == y
           turn_by_deg(45)
           if x > y:
             self.turn_by_deg(-90)
