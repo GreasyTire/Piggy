@@ -185,7 +185,7 @@ class Piggy(PiggyParent):
             
         else:
           self.fwd()
-        
+      
     def shake(self):
         """ Another example move """
         self.deg_fwd(720)
@@ -242,3 +242,15 @@ if __name__ == "__main__":  # only run this loop if this is the main file
 
     except KeyboardInterrupt: # except the program gets interrupted by Ctrl+C on the keyboard.
         p.quit()  
+
+#intermiediate movements
+def cruise(self):
+  self.fwd()
+  self.read_distance()
+  self.servo(1100)
+  self.read_distance()
+  self.servo(1500)
+  self.read_distance()
+  self.cruise()
+  
+  
