@@ -189,10 +189,11 @@ class Piggy(PiggyParent):
 
     def cruise(self):
       self.fwd()
-      self.read_distance()
       self.servo(1100)
       self.read_distance()
       self.servo(1500)
+      self.read_distance()
+      self.servo(self.MIDPOINT)
       self.read_distance()
       self.cruise()
       
