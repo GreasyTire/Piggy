@@ -190,13 +190,31 @@ class Piggy(PiggyParent):
     def cruise(self):
       self.fwd()
       self.servo(1100)
-      self.read_distance()
+      time.sleep(.3)
+      R = self.read_distance()
       self.servo(1500)
-      self.read_distance()
+      time.sleep(.3)
+      L = self.read_distance() 
       self.servo(self.MIDPOINT)
-      self.read_distance()
-      self.cruise()
-      
+      time.sleep(.3)
+      M = self.read_distance()
+      if M < 300:
+        if R > 400:
+          self.fwd(left = 75, right = 30)
+          time.sleep(1.5)
+          self.fwd(left = 30, right = 75)
+          time.sleep(1.5)   
+          self.cruise()
+        else:
+          self.fwd(left = 30, right = 75)
+          time.sleep(1.5)
+          self.fwd(left = 75, right = 30)
+          time.sleep(1.5)
+          self.cruise()
+      else:
+        self.cruise()
+        
+        
     def shake(self):
         """ Another example move """
         self.deg_fwd(720)
