@@ -47,7 +47,8 @@ class Piggy(PiggyParent):
                 "w": ("wall", self.wall),
                 "t": ("turn", self.turn),
                 "b": ("box", self.box),
-                "cl":("close", self.close),
+                "cl": ("close", self.close),
+                "cr": ("cruise", self.cruise),
                 }
         # loop and print the menu...
         for key in sorted(menu.keys()):
