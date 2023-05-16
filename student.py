@@ -186,6 +186,15 @@ class Piggy(PiggyParent):
             
         else:
           self.fwd()
+
+    def cruise(self):
+      self.fwd()
+      self.read_distance()
+      self.servo(1100)
+      self.read_distance()
+      self.servo(1500)
+      self.read_distance()
+      self.cruise()
       
     def shake(self):
         """ Another example move """
