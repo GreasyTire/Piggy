@@ -49,6 +49,7 @@ class Piggy(PiggyParent):
                 "b": ("box", self.box),
                 "cl": ("close", self.close),
                 "cr": ("cruise", self.cruise),
+                "m": ("maze", self.maze),
                 }
         # loop and print the menu...
         for key in sorted(menu.keys()):
@@ -214,7 +215,26 @@ class Piggy(PiggyParent):
       else:
         self.cruise()
         
-        
+    def maze(self):
+      while True:
+        self.fwd()
+        if self.read_distance() < 100:
+          self.stop()
+          self.servo(500)
+          time.sleep(.5)
+          R = self.read_distance()
+          self.servo(2400)
+          L = self.read_distance()
+          self.servo(self.MIDPOINT)
+          if L > R:
+            self.turn_by_deg(-90)
+            self.maze()
+          else:
+            self.turn_by_deg(90)
+            self.maze()  
+        else:
+          self.maze()
+  
     def shake(self):
         """ Another example move """
         self.deg_fwd(720)
