@@ -228,7 +228,7 @@ class Piggy(PiggyParent):
           L = self.read_distance()
           self.servo(self.MIDPOINT)
           if L > R:
-            self.turn_by_deg(-90)
+            self.turn_by_deg(-85)
             self.maze()
           else:
             self.turn_by_deg(90)
