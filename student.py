@@ -221,9 +221,10 @@ class Piggy(PiggyParent):
         if self.read_distance() < 100:
           self.stop()
           self.servo(500)
-          time.sleep(.5)
+          time.sleep(1.5)
           R = self.read_distance()
           self.servo(2400)
+          time.sleep(1.5)
           L = self.read_distance()
           self.servo(self.MIDPOINT)
           if L > R:
@@ -232,8 +233,7 @@ class Piggy(PiggyParent):
           else:
             self.turn_by_deg(90)
             self.maze()  
-        else:
-          self.maze()
+        
   
     def shake(self):
         """ Another example move """
