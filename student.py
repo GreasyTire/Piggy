@@ -226,7 +226,7 @@ class Piggy(PiggyParent):
           self.servo(self.MIDPOINT)
           time.sleep(1.5)
           if L > R:
-            self.turn_by_deg(-83)
+            self.turn_by_deg(-80)
             self.maze()
           else:
             self.turn_by_deg(87)
