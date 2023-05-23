@@ -229,7 +229,7 @@ class Piggy(PiggyParent):
             self.turn_by_deg(-75)
             self.maze()
           else:
-            self.turn_by_deg(84)
+            self.turn_by_deg(81)
             self.maze()  
         
   
