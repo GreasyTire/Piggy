@@ -154,39 +154,36 @@ class Piggy(PiggyParent):
           self.fwd()
             
     def close(self):
-      while True:
-        if self.read_distance() < 100:
-          self.stop()
-          
-          self.turn_by_deg(45)
-          x = self.read_distance()
-          self.turn_by_deg(-45)
-          
-          self.turn_by_deg(-45)
-          y = self.read_distance()
-          self.turn_by_deg(45)
-          if y > x:
-            self.turn_by_deg(-90)
-            self.servo(500)
+      if self.read_distance() < 100:
+        self.stop()
+        
+        self.turn_by_deg(45)
+        x = self.read_distance()
+        self.turn_by_deg(-45)
+        
+        self.turn_by_deg(-45)
+        y = self.read_distance()
+        self.turn_by_deg(45)
+        if y > x:
+          self.turn_by_deg(-90)
+          self.servo(500)
+          self.fwd()
+          if self.read_distance() > 200:
             self.fwd()
-            if self.read_distance() > 200:
-              self.fwd()
-              time.sleep(1)
-              self.turn_by_deg(90)
-              self.servo(self.MIDPOINT)
-              
-          else:
+            time.sleep(1)
             self.turn_by_deg(90)
-            self.servo(2400)
-            self.fwd()
-            if self.read_distance() > 200:
-              self.fwd()
-              time.sleep(1)
-              self.turn_by_deg(-90)
-              self.servo(self.MIDPOINT)
+            self.servo(self.MIDPOINT)
             
         else:
+          self.turn_by_deg(90)
+          self.servo(2400)
           self.fwd()
+          if self.read_distance() > 200:
+            self.fwd()
+            time.sleep(1)
+            self.turn_by_deg(-90)
+            self.servo(self.MIDPOINT)
+      
 
     def cruise(self):
       self.fwd()
